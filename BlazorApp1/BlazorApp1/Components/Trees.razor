@@ -1,1 +1,51 @@
-﻿
+﻿@using BlazorApp1.Models
+@rendermode InteractiveServer
+<h2>Trees</h2>
+<ul>
+    @foreach (var tree in trees)
+    {
+        <li>
+            <h3>@tree.Name</h3>
+            <button @onclick="() => appendComplimentToTree(tree.Id)">Add Compliment</button>
+            @foreach (var compliment in tree.Compliments)
+            {
+                <h4>@compliment</h4>
+            }
+
+        </li>
+    }
+
+</ul>
+@code {
+
+    List<Tree> trees = [
+    new Tree{
+    Id = 1,
+    Name = "Barts tree",
+    Compliments = new List<string>(){Compliment.GetCompliment()},
+    Size = 25.5,
+    Location = (2.4213, 75.33231),  
+    Species = "Oak"
+    },
+     new Tree{
+    Id = 2,
+    Name = "Callums tree",
+    Compliments = new List<string>(){Compliment.GetCompliment()},
+    Size = 10.5,
+    Location = (23.4213, 12.33231),
+    Species = "Willow"
+    }
+    ];
+
+    void TestMethod()
+    {
+        Console.WriteLine("test");
+    }
+
+    void appendComplimentToTree(int id)
+    {
+        Tree chosenTree = trees.FirstOrDefault(t => t.Id == id);
+        if (chosenTree != null) chosenTree.Compliments.Add(Compliment.GetCompliment());
+        Console.WriteLine(Compliment.GetCompliment());
+    }
+}
