@@ -7,13 +7,28 @@
     <base href="/" />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="BlazorApp1.styles.css" />
+    <style>
+        main {
+            min-height: 75vh;
+        }
+        article {
+            height: 100%;
+        }
+        canvas{
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
     <HeadOutlet />
 </head>
 
 <body>
-    <Header/>
-    <Routes />
+   
+    <Routes /> 
     <script src="_framework/blazor.web.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/three.min.js"></script>
+
 </body>
 
 </html>

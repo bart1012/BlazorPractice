@@ -47,5 +47,6 @@
         Tree chosenTree = trees.FirstOrDefault(t => t.Id == id);
         if (chosenTree != null) chosenTree.Compliments.Add(Compliment.GetCompliment());
         Console.WriteLine(Compliment.GetCompliment());
+        StateHasChanged();
     }
 }

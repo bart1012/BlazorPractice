@@ -1,6 +1,26 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Blazor + THREE.js</PageTitle><!-- NOTE: THIS LINE IS NOT COMPATIBLE WITH OLDER VERSIONS OF .NET -->
 
-<Intro/>
-<Trees/>
+<canvas id="canvasId"></canvas><!-- NOTE: THIS LINE IS NEW -->
+@code {
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                // Call the JavaScript function
+                await JSRuntime.InvokeVoidAsync("threeExample");
+                Console.WriteLine("JavaScript function called successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error calling JavaScript: {ex.Message}");
+            }
+        }
+    }
+}
