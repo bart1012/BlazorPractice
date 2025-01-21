@@ -10,4 +10,8 @@
     <None Include="wwwroot\Resources\premium_photo.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Blazor3D" Version="0.1.42" />
+  </ItemGroup>
+
 </Project>

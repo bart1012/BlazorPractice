@@ -27,3 +27,48 @@ h1:focus {
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
+
+body {
+    background-image: linear-gradient(BlanchedAlmond, BurlyWood)
+}
+
+#headerTitle {
+    padding: 2%;
+    text-align: center;
+    color: green;
+    text-align: center;
+    animation: header 0s ease-in-out infinite;
+    animation-direction: alternate;
+    overflow:hidden;
+}
+@keyframes header {
+    0% {
+        rotate: 5deg;
+        scale: 100%
+    }
+
+    50% {
+        scale: 200%
+    }
+
+    100% {
+        rotate: -5deg;
+        scale: 100%
+    }
+}
+#headerSubheading {
+    text-align: center;
+}
+#headerNav {
+    text-align: center;
+}
+
+#introHeading {
+    text-align: center;
+    justify-content: center;
+}
+
+#introImage {
+    display: block;
+    margin: auto;
+}
